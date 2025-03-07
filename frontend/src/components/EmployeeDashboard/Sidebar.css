@@ -1,0 +1,23 @@
+/* AdminDashboard.css */
+.admin-dashboard-container {
+  display: flex; /* Use flexbox for the main layout */
+  min-height: 100vh; /* Full viewport height */
+  background-color: #eff4f4;
+}
+
+.dashboard-content {
+  flex: 1; /* Take up the remaining space */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+}
+
+/* Style the Navbar */
+.dashboard-content > div {
+    background-color: #38ada9;
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

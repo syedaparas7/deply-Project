@@ -1,0 +1,65 @@
+/* styles.css */
+
+.add-employee-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f8ff; /* Light blue background for the page */
+  padding: 20px;
+  margin-top: 10px;
+}
+.form-container1 {
+  background-color: #fff; /* White background for the form container */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin: 10px auto; /* Add margin for spacing */
+}
+
+.form-title1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.form-group1 {
+  margin-bottom: 20px;
+}
+
+.form-group1 label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-group1 input,
+.form-group1 select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.submit-button1 {
+  background-color: #090909; /* Match the Green from image */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.submit-button1:hover {
+  opacity: 0.9; /* Add a slight hover effect if desired */
+}

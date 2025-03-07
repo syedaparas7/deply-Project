@@ -1,0 +1,61 @@
+/* AdminSidebar.css */
+
+.sidebar {
+  background-color: #f0f0f0; 
+  color: white;
+  width: 220px; 
+  padding: 20px;
+  height: 100vh; 
+}
+
+.sidebar-heading {
+  background-color: #38ada9; /* Heading background color */
+  color: white; /* Heading text color */
+  padding: 22px;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-link {
+  background-color: black;
+  color: white; /* Link text color */
+  text-decoration: none;
+  padding: 20px;
+  font-size: 20px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center; /* Vertically center icon and text */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.sidebar-link:hover {
+  background-color: rgba(0, 0, 0, 0.8);  /* Slightly lighter black on hover */
+}
+
+.sidebar-link span {
+  margin-left: 10px; /* Space between icon and text */
+}
+
+.sidebar-links a {
+    color: white; /* Ensure text color is white */
+}
+
+/* Style for the active (selected) link */
+.active-link {
+  background-color: #38ada9; 
+  color: black; 
+  font-weight: bold;
+}
+
+/* Remove hover effect on active link */
+.active-link:hover {
+  background-color: #38ada9; /* Keep the color consistent */
+}

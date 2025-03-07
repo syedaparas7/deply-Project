@@ -1,0 +1,74 @@
+/* Container and Header Styling */
+.project-list-container1 {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 2rem;
+  /* border-radius: 12px; */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-top: 1rem;
+}
+
+.project-list-header1 {
+  color: #0d121e;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.project-list-header1 h3 {
+  color: #374151;
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Top Actions: Search and Add Project Button */
+.project-list-actions1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+/* Search Input */
+.search-input1 {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.975rem;
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.2s ease;
+  background-color: #f9fafb;
+}
+
+.search-input1:focus {
+  border-color: #40cdb5;
+  box-shadow: 0 0 0 3px rgba(64, 205, 181, 0.1);
+  outline: none;
+  background-color: #fff;
+}
+
+/* Add Project Link (styled like a button) */
+.add-project-link1 {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-size: 0.975rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.add-project-link1:hover {
+  background-color: #2d3534;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(64, 205, 181, 0.1);
+}
