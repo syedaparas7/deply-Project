@@ -2,7 +2,7 @@
 .admin-dashboard-container {
   display: flex; /* Use flexbox for the main layout */
   min-height: 100vh; /* Full viewport height */
-  background-color: #f0f0f0;
+  background-color: #352a2a;
 }
 
 .dashboard-content {
