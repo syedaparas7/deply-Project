@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import './Setting.css';
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Setting = () => {
   const { user } = useAuth();
@@ -50,7 +51,7 @@ const Setting = () => {
 
     setLoading(true);
     try {
-      const response = await axios.put('http://localhost:5000/api/users/change-password',{
+      const response = await axios.put(`${API_URL}/api/users/change-password`,{
         userId: user._id,
         currentPassword: passwordData.currentPassword,
         newPassword: passwordData.newPassword

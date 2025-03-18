@@ -5,6 +5,7 @@ import { columns, EmployeeButtons } from '../../utils/EmployeeHelper';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import moment from 'moment';
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const List = () => {
   const [employees, setEmployees] = useState([]);
@@ -18,7 +19,7 @@ const List = () => {
       setEmployees(prevEmployees => prevEmployees.filter(employee => employee._id !== id));
 
       // Delete the employee from the backend
-      const response = await axios.delete(`http://localhost:5000/api/employee/${id}`, {
+      const response = await axios.delete(`${API_URL}/api/employee/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -47,7 +48,7 @@ const List = () => {
     const fetchEmployees = async () => {
       setEmpLoading(true);
       try {
-        const response = await axios.get('http://localhost:5000/api/employee', {
+        const response = await axios.get(`${API_URL}/api/employee`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }

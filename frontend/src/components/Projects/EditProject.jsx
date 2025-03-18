@@ -3,6 +3,7 @@ import { useParams,  useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './EditProject.css'
 
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const EditProject = () => {
   const {id} = useParams()
@@ -14,7 +15,7 @@ const EditProject = () => {
     const fetchProjects = async () => {
       setProjLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5000/api/projects/${id}`, {
+        const response = await axios.get(`${API_URL}/api/projects/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -45,7 +46,7 @@ const EditProject = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.put(`http://localhost:5000/api/projects/${id}`, project, {
+      const response = await axios.put(`${API_URL}/api/projects/${id}`, project, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

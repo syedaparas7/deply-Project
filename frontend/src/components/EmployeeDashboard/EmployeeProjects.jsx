@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './EmployeeProject.css';
 
+const API_URL = import.meta.env.VITE_BACKEND_URL;
+
 const EmployeeProjects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,7 +14,7 @@ const EmployeeProjects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/projects', {
+        const response = await axios.get(`${API_URL}/api/projects`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }

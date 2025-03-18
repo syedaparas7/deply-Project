@@ -3,6 +3,7 @@ import axios from 'axios';
 import "../index.css";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -10,15 +11,20 @@ const Login = () => {
   const [error, setError] = useState(null);
   const {login} = useAuth()
   const navigate = useNavigate()
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(""); 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", {
-        email,
-        password
-      });
+
+const response = await axios.post(`${API_URL}/api/auth/login`, {
+  
+  email,
+  password
+});
+// console.log("API Response:", response.data); // ✅ Yeh console log add karein
+
+// console.log("Backend URL:", import.meta.env.VITE_BACKEND_URL);//this url
       if (response.data.success){
         login(response.data.user)
         localStorage.setItem("token", response.data.token)

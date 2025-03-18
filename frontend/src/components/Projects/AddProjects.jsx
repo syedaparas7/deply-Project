@@ -3,6 +3,8 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import './AddProjects.css'
 
+const API_URL = import.meta.env.VITE_BACKEND_URL;
+
 const AddProjects = () => {
   const [project, setProject] = useState({
     project_name: '',
@@ -20,7 +22,7 @@ const AddProjects = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post("http://localhost:5000/api/projects/add", project, {
+      const response = await axios.post(`${API_URL}/api/projects/add`, project, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

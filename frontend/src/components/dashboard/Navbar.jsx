@@ -6,7 +6,7 @@ const Navbar = () => {
   const {user, logout} = useAuth()
   return (
     <div className="navbar">
-      <p>Welcome {user.name}</p>
+      <p>Welcome  {user.name}</p>
       <button onClick={logout}>Logout</button>
     </div>
   )

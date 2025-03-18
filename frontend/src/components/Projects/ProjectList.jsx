@@ -5,6 +5,8 @@ import DataTable from 'react-data-table-component';
 import { columns, ProjectButtons } from '../../utils/ProjectHelper';
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_BACKEND_URL;
+
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
@@ -20,7 +22,7 @@ const ProjectList = () => {
     const fetchProjects = async () => {
       setProjLoading(true);
       try {
-        const response = await axios.get('http://localhost:5000/api/projects', {
+        const response = await axios.get(`${API_URL}/api/projects`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
