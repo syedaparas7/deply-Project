@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
 import './View.css'; // Ensure this CSS file exists
-const API_URL = import.meta.env.VITE_BACKEND_URL;
+const VITE_API_URL = import.meta.env.VITE_API_URL;
 
 
 const View = () => {
@@ -15,7 +15,7 @@ const View = () => {
   useEffect(() => {
     const fetchEmployee = async () => {
       try {
-        const response = await axios.get(`${API_URL}/api/employee/${id}`, {
+        const response = await axios.get(`${VITE_API_URL}/api/employee/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }

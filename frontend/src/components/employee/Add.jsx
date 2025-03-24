@@ -47,7 +47,7 @@ const Add = () => {
 
         try {
             const response = await axios.post(
-                `${API_URL}/api/employee/add`,
+                `${VITE_API_URL}/api/employee/add`,
                 formData,
                 {
                     headers: {

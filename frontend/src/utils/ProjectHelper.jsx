@@ -32,6 +32,7 @@ export const columns = [
 
   }
 ]
+const VITE_API_URL = import.meta.env.VITE_API_URL;
 
 export const ProjectButtons = ({_id, onProjectDelete}) => {
   const navigate = useNavigate()
@@ -40,7 +41,7 @@ export const ProjectButtons = ({_id, onProjectDelete}) => {
     const confirm = window.confirm("Do you want to delete?")
     if (confirm) {
     try {
-      const response = await axios.delete(`http://localhost:5000/api/projects/${id}`, {
+      const response = await axios.delete(`${VITE_API_URL}/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
