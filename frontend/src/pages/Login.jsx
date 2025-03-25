@@ -3,9 +3,9 @@ import axios from 'axios';
 import "../index.css";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'
-const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
-console.log("VITE_API_URL:", VITE_API_URL);
+console.log("VITE_API_URL:", API_URL);
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -19,15 +19,12 @@ const Login = () => {
     setError(""); 
     try {
 
-const response = await axios.post(`${VITE_API_URL}/api/auth/login`, {
+const response = await axios.post(`${API_URL}/api/auth/login`, {
   
   email,
   password
 });
-// console.log("API Response:", response.data); // ✅ Yeh console log add karein
-
-// console.log("Backend URL:", import.meta.env.VITE_BACKEND_URL);//this url
-      if (response.data.success){
+   if (response.data.success){
         login(response.data.user)
         localStorage.setItem("token", response.data.token)
         if (response.data.user.role === "admin") {

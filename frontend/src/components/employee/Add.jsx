@@ -4,7 +4,7 @@ import { fetchProjects } from "../../utils/EmployeeHelper";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_BACKEND_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Add = () => {
     const [projects, setProjects] = useState([]);
@@ -27,7 +27,6 @@ const Add = () => {
                 setProjects(projectsData);
             } catch (error) {
                 console.error("Error fetching projects:", error);
-                // Optionally set projects to an empty array or display an error message
                 setProjects([]);
             }
         };
@@ -47,7 +46,7 @@ const Add = () => {
 
         try {
             const response = await axios.post(
-                `${VITE_API_URL}/api/employee/add`,
+                `${API_URL}/api/employee/add`,
                 formData,
                 {
                     headers: {

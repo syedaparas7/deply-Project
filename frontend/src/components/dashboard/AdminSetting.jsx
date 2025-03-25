@@ -3,7 +3,7 @@ import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import './AdminSetting.css';
 
-const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 const AdminSetting = () => {
@@ -53,7 +53,7 @@ const AdminSetting = () => {
 
     setLoading(true);
     try {
-      const response = await axios.put(`${VITE_API_URL}/api/users/change-password`, {
+      const response = await axios.put(`${API_URL}/api/users/change-password`, {
         userId: user._id,
         currentPassword: passwordData.currentPassword,
         newPassword: passwordData.newPassword

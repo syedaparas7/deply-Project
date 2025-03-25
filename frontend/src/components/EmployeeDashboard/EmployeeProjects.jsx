@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './EmployeeProject.css';
 
-const API_URL = import.meta.env.VITE_BACKEND_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 const EmployeeProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -37,7 +37,7 @@ const EmployeeProjects = () => {
   }, []);
 
   const handleViewProject = (id) => {
-    navigate(`/employee-dashboard/project/${id}`);
+    navigate(`${API_URL}/employee-dashboard/project/${id}`);
   };
 
   if (loading) {

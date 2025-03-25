@@ -4,7 +4,8 @@ import axios from 'axios';
 import moment from 'moment';
 import './View.css'; // Your updated CSS file
 
-const API_URL = import.meta.env.VITE_BACKEND_URL;
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const ViewProject = () => {
   const { id } = useParams();

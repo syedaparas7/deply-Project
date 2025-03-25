@@ -46,12 +46,13 @@ import axios from "axios";
   }
 ]
 
-const VITE_API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
+
 
  export const fetchProjects = async () => {
   let projects
   try {
-    const response = await axios.get(`${VITE_API_URL}/api/projects`, {
+    const response = await axios.get(`${API_URL}/api/projects`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -78,7 +79,7 @@ export const EmployeeButtons = ({ _id, onEmployeeDelete }) => {
       const confirm = window.confirm("Do you want to delete?");
       if (confirm) {
           try {
-              const response = await axios.delete(`${VITE_API_URL}/api/employee/${_id}`, { // CORRECTED API URL
+              const response = await axios.delete(`${API_URL}/api/employee/${_id}`, { // CORRECTED API URL
                   headers: {
                       Authorization: `Bearer ${localStorage.getItem('token')}`
                   }
